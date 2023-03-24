@@ -1,0 +1,28 @@
+{
+  "name": "are-discord",
+  "version": "1.0.2",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/albaniaProducties/are-discord.git"
+  },
+  "keywords": [
+    "@albania/products",
+    "discord",
+    "easydiscord",
+    "discord.js"
+  ],
+  "author": "albania",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/albaniaProducties/are-discord/issues"
+  },
+  "homepage": "https://github.com/albaniaProducties/are-discord#readme",
+  "dependencies": {
+    "discord.js": "^14.8.0"
+  }
+}
