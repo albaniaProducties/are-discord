@@ -44,5 +44,6 @@ isBan // проверяет в бане ли
 unban // разбанивает
 ```
 
-[токен](https://discord.com/developers/applications)
-[сервер поддержки](https://discord.gg/m8Af3GQp)
+- [токен](https://discord.com/developers/applications)
+
+- [сервер поддержки](https://discord.gg/m8Af3GQp)
