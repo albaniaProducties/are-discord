@@ -1,84 +1,48 @@
 # rus:
+- Библиотека создана с целью упрощения написания ботов на discord.js.
+- Методы, функции, классы довольны коротки и быстро запоминаются.
+- Пока находится бета тестировании и может вызвать оторжения, ошибки и что то в том роде.
 
-## Функции:
-```js
-start("yotu token");
-setCommand({
-  name: "my name command",
-  run(client, message, args) => {
-    // discord.js code
-  }
-});
-```
  ## Экземпляр
- ```js
- const AreClient = require('are-discord);
- 
- const bot = new AreClient({
-   prefix: "!",
-   intents: 3276541
- });
- ```
-
-## пример работы с ботом
-
 ```js
-const AreDiscord = require('are-disocrd');
+const { Bot, MessageEmbed } = require('are-discord');
 
-const bot = new AreDiscord({
-  prefix: "!",
+const bot = new Bot({
+  prefix: ["!", "@"],
   intents: 3276541
 });
 
-bot.setCommand({
+bot.command({
   name: "ping",
   run: async (client, message, args) => {
-    message.channel.send("Pong!");
+    const ping = new MessageEmbed()
+    .setTitle("пинг")
+    .setDescription(`<@${bot.getId}>, задрежка: ${bot.ping}`)
+    .setColor('#FF0000')
+    message.reply({ embeds: [ping] });
+  }
+})
+
+bot.command({
+  name: `rand`,
+  run: (client, message, args) => {
+    
+    message.reply(`<@${bot.getId}>, вот рандомное число: ${bot.random(100, 500)}`)
   }
 });
 
-bot.start("MTA4MDUyMjcwNzk5MDQ5OTM5OQ.G4Kdsq.Cuyw3-w10M_rjIkFrNf7j2hCoD9IRrErWGDr-w");
+bot.start("token");
 ```
 
-# English
-
-## functions
-```js
-start("you token");
-setCommand({
-  name: "my name command",
-  run(client, message, args) => {
-    // discord.js code
-  }
-});
+# Методы
+```
+getId // выдает айди автра
+getName // выжает имя и тэг
+ping // выдает задержку
+ban(getId, 10s, "пом домидор") // банит 
+isBan // проверяет в бане ли
+unban // разбанивает
 ```
 
-## instance
-```js
-const AreClient = require('are-discord);
- 
- const bot = new AreClient({
-   prefix: "!",
-   intents: 3276541
- });
- ```
- 
- ## bot example
- 
- ```js
- const AreDiscord = require('are-disocrd');
-
-const bot = new AreDiscord({
-  prefix: "!",
-  intents: 3276541
-});
-
-bot.setCommand({
-  name: "ping",
-  run: async (client, message, args) => {
-    message.channel.send("Pong!");
-  }
-});
-
-bot.start("MTA4MDUyMjcwNzk5MDQ5OTM5OQ.G4Kdsq.Cuyw3-w10M_rjIkFrNf7j2hCoD9IRrErWGDr-w");
-```
+[токен](https://discord.com/developers/applications)
+[сервер поддержки](https://discord.gg/m8Af3GQp)
